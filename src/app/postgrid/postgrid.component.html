@@ -1,0 +1,21 @@
+<h1>Here are the posts</h1>
+<div class="container">
+<div *ngFor="let post of posts.slice()">
+    <br>
+    <div>
+    <div>
+        <span class="postClass">{{ post.content}}</span>
+    </div>
+        <span class="smallDetails">postedBy:----{{ post.user_id}}</span>
+        <span class="smallDetails">---at:-------{{post.createdAt}}</span>
+        <button class="smallDetails" (click)="postDetails(post.post_id)">Comments</button>
+    </div>
+</div>
+</div>
+
+<div>
+    <br>
+    <button (click)="prevPage()"[disabled]="currentPage === 0">Previous</button>
+    <span> Page {{currentPage+1}} of {{totalPages}}</span>
+    <button (click)="nextPage()" [disabled]="currentPage+1 === totalPages">Next</button>
+</div>

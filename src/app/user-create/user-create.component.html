@@ -1,0 +1,19 @@
+<div class="alert alert-warning" *ngIf="userCreateForm.dirty && userCreateForm.invalid">Enter valid values</div>
+  
+<form (ngSubmit)="!userCreateForm.invalid && addUser()" #userCreateForm="ngForm">
+  <fieldset class="form-group">
+    User_Id
+    <input type="text" #userId="ngModel" 
+          [(ngModel)]="user.user_id" class="form-control" 
+              name="user_id" required="required" minlength="5">
+    Password
+    <input type="password" #password="ngModel" 
+        [(ngModel)]="user.password" class="form-control" 
+            name="password" required="required" minlength="8">
+    Mail_Id
+    <input type="email" #mailId="ngModel" 
+        [(ngModel)]="user.mail_id" class="form-control" 
+            name="comment_Value" required="required" minlength="5">
+  </fieldset>
+  <button type="submit" class="btn btn-success">Sign up</button>
+</form>  

@@ -1,0 +1,35 @@
+<H1>Post Details</H1>
+<div class="container">
+  <h2>
+<div>{{post.content}}</div>
+</h2>
+<span>Comments:</span>
+<div *ngFor="let comment of comments">
+    <br>
+    <div>
+        <span>{{ comment.comment_value}}</span>
+        <br>
+        <span>postedBy: {{ comment.user_id}}</span>
+        <br>
+        <span>at:{{comment.createdAt}}</span>
+        <br>
+    </div>
+</div>
+  <div class="alert alert-warning" *ngIf="commentForm.dirty && commentForm.invalid">Enter valid values</div>
+  
+  <form (ngSubmit)="!commentForm.invalid && addComment()" #commentForm="ngForm">
+    <fieldset class="form-group">
+      <input type="text" #commentValue="ngModel" 
+            [(ngModel)]="comment.comment_value" class="form-control" 
+                name="comment_Value" required="required" minlength="1">
+    </fieldset>
+    <button type="submit" class="btn btn-success">Comment</button>
+  </form>  
+</div>
+
+<div>
+    <br>
+    <button (click)="prevPageComments()"[disabled]="currentPage === 0">Previous</button>
+    <span> Page {{currentPage+1}} of {{totalPages}}</span>
+    <button (click)="nextPageComments()" [disabled]="currentPage+1 >= totalPages">Next</button>
+</div>

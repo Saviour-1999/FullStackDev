@@ -1,0 +1,14 @@
+<H1>POST</H1>
+
+<div class="container">
+  <div class="alert alert-warning" *ngIf="postForm.dirty && description.invalid">Enter atleast 1 characters in Post</div>
+  
+  <form (ngSubmit)="!postForm.invalid && savePost()" #postForm="ngForm">
+    <fieldset class="form-group">
+      <label>Post</label>
+      <input type="text" #description="ngModel" 
+            [(ngModel)]="post.content" class="form-control" 
+                name="description" required="required" minlength="1">
+    </fieldset>
+    <button type="submit" class="btn btn-success">Save</button>
+  </form> 
