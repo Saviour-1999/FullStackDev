@@ -1,0 +1,16 @@
+com\example\peter\dto\UserCreateRequest.class
+com\example\peter\controller\PostController.class
+com\example\peter\controller\UserController.class
+com\example\peter\dto\UserResponse.class
+com\example\peter\repository\UserRepository.class
+com\example\peter\dto\UserCreateResponse.class
+com\example\peter\repository\PostsRepository.class
+com\example\peter\dto\PostCreateRequest.class
+com\example\peter\services\UserService.class
+com\example\peter\DemoApplication.class
+com\example\peter\model\Posts.class
+com\example\peter\dto\UserResponse$UserResponseBuilder.class
+com\example\peter\model\User$UserBuilder.class
+com\example\peter\model\Posts$PostsBuilder.class
+com\example\peter\services\PostService.class
+com\example\peter\model\User.class
